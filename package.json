@@ -1,0 +1,25 @@
+{
+  "name": "slack2googlehome",
+  "version": "1.0.0",
+  "description": "Cast a Slack message to goole home",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.18.2",
+    "google-home-push": "^1.2.1",
+    "ip": "^1.1.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "vanx2",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanx2/slack2googlehome.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vanx2/slack2googlehome/issues"
+  },
+  "homepage": "https://github.com/vanx2/slack2googlehome"
+}
