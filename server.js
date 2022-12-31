@@ -12,6 +12,15 @@ var app = express();
 
 app.use('/static', express.static('static'));
 app.use(express.json());
+app.use('/*', function (req, res) {
+  console.log(new Date().toLocaleString({ timeZone: 'Asia/Tokyo' }));
+});
+app.get('/say', function (req, res) {
+  if (req.query.text) {
+    myGoogle.speak(req.query.text);
+  }
+  res.end();
+});
 
 app.post('/slack', function (req, res) {
   if (req.body.challenge) {
