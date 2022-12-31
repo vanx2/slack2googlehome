@@ -13,6 +13,12 @@
         <string>/Users/van/.nodebrew/current/bin/node</string>
         <string>/Users/van/Documents/scripts/slack2googlehome/server.js</string>
     </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/van/Documents/scripts/slack2googlehome/</string>
+    <key>StandardOutPath</key>
+    <string>/var/log/vscript/slack2googlehome.log</string>
+    <key>StandardErrorPath</key>
+    <string>/var/log/vscript/slack2googlehome_err.lo</string>
 </dict>
 </plist>
 

@@ -23,7 +23,7 @@ app.post('/slack', function (req, res) {
 });
 
 app.get('/push/:file', function (req, res) {
-  myGoogle.push("http://" + ip.address() + ":" + port + "/static/" + req.params.file );
+  myGoogle.push("http://" + IP.address() + ":" + port + "/static/" + req.params.file );
   res.end();
 });
 
