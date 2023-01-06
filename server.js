@@ -12,8 +12,10 @@ var app = express();
 
 app.use('/static', express.static('static'));
 app.use(express.json());
-app.use('/*', function (req, res) {
+app.use('/*', function (req, res, next) {
   console.log(new Date().toLocaleString({ timeZone: 'Asia/Tokyo' }));
+  console.log(req.url);
+  next();
 });
 app.get('/say', function (req, res) {
   if (req.query.text) {
@@ -23,10 +25,21 @@ app.get('/say', function (req, res) {
 });
 
 app.post('/slack', function (req, res) {
+  console.log(req.body);
   if (req.body.challenge) {
     res.send('{ "challenge": "' + req.body.challenge + '" }');
   } else if (req.body.event && req.body.event.text) {
-    myGoogle.speak(req.body.event.text);
+    var who = "";
+    if ( req.body.event.user === "U03HJE7P6" ){
+      who = "お父さんより。";
+    } else if ( req.body.event.user === "U0413NKTWNL"){
+      who = "お母さんより。";
+    } else if ( req.body.event.user === "U040DUBH4TV"){
+      who = "ゴンより。";
+    } else if ( req.body.event.user === "U040B2YJ96H"){
+      who = "ユンより。";
+    }
+    myGoogle.speak(who + req.body.event.text);
   }
   res.end();
 });
@@ -38,6 +51,6 @@ app.get('/push/:file', function (req, res) {
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
-})
+});
 
 
