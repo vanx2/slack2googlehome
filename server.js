@@ -1,3 +1,4 @@
+// curl "localhost:8080/say" -G  --data-urlencode 'text=あいうえお'
 var express = require('express');
 var GoogleHome = require("google-home-push");
 var IP = require("ip");
