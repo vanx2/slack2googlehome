@@ -19,7 +19,11 @@ app.use('/*', function (req, res, next) {
   next();
 });
 app.get('/say', function (req, res) {
-  if (req.query.text) {
+  console.log("Query: " + req.query.text);
+  if (req.headers['x-vanx-jobid'] && new Date().getHours() < 7 && new Date().getHours() < 8) {
+    console.log("x-vanx-jobid" + req.headers['x-vanx-jobid']);
+    // do nothing
+  } else if (req.query.text) {
     myGoogle.speak(req.query.text);
   }
   res.end();

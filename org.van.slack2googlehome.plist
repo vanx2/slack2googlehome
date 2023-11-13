@@ -18,7 +18,7 @@
     <key>StandardOutPath</key>
     <string>/var/log/vscript/slack2googlehome.log</string>
     <key>StandardErrorPath</key>
-    <string>/var/log/vscript/slack2googlehome_err.lo</string>
+    <string>/var/log/vscript/slack2googlehome_err.log</string>
 </dict>
 </plist>
 
